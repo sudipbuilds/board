@@ -3,22 +3,23 @@ import { useState, DragEvent, useMemo } from "react";
 import { FaGithub, FaTwitter, FaMoon, FaSun } from "react-icons/fa";
 
 import { useTheme } from "@/hooks/useTheme";
-import { useTasks, type Task } from "@/hooks/useTasks";
+import type { Task } from "@/hooks/useTasks";
 import { ConfirmDialog } from "@/components/ui/dialog";
 
 interface DeleteAreaProps {
   tasks: Task[];
   onClearAll: () => void;
+  onDeleteTask: (taskId: string) => void;
   onShowLanding?: () => void;
 }
 
 export const DeleteArea = ({
   tasks,
   onClearAll,
+  onDeleteTask,
   onShowLanding,
 }: DeleteAreaProps) => {
   const { theme, setTheme } = useTheme();
-  const { deleteTask } = useTasks();
   const [active, setActive] = useState<boolean>(false);
   const [showClearAllDialog, setShowClearAllDialog] = useState<boolean>(false);
 
@@ -42,7 +43,7 @@ export const DeleteArea = ({
   const handleDragEnd = (e: DragEvent<HTMLDivElement>) => {
     const taskId = e.dataTransfer.getData("taskId");
     if (taskId) {
-      deleteTask(taskId);
+      onDeleteTask(taskId);
     }
     setActive(false);
   };

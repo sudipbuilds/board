@@ -1,12 +1,21 @@
 import { Column } from "./column";
-import { useTasks, type Task } from "@/hooks/useTasks";
+import type { Task } from "@/hooks/useTasks";
 
 interface KanbanBoardProps {
   tasks: Task[];
+  moveTask: (taskId: string, column: string, beforeId?: string) => void;
+  clearColumn: (column: string) => void;
+  moveAllTasks: (fromColumn: string, toColumn: string) => void;
+  addTask: (title: string, column: string) => void;
 }
 
-export const KanbanBoard = ({ tasks }: KanbanBoardProps) => {
-  const { moveTask, clearColumn, moveAllTasks, addTask } = useTasks();
+export const KanbanBoard = ({
+  tasks,
+  moveTask,
+  clearColumn,
+  moveAllTasks,
+  addTask,
+}: KanbanBoardProps) => {
   return (
     <div className="flex-1 flex h-full w-full gap-6 overflow-x-auto pb-4">
       <Column

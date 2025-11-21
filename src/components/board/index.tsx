@@ -3,7 +3,7 @@ import { KanbanBoard } from "./kanban-board";
 import { useTasks } from "@/hooks/useTasks";
 
 export const Board = () => {
-  const { tasks, clearAllTasks } = useTasks();
+  const { tasks, clearAllTasks, moveTask, clearColumn, moveAllTasks, addTask, deleteTask } = useTasks();
 
   const handleShowLanding = () => {
     try {
@@ -19,9 +19,16 @@ export const Board = () => {
       <DeleteArea
         tasks={tasks}
         onClearAll={clearAllTasks}
+        onDeleteTask={deleteTask}
         onShowLanding={handleShowLanding}
       />
-      <KanbanBoard tasks={tasks} />
+      <KanbanBoard 
+        tasks={tasks}
+        moveTask={moveTask}
+        clearColumn={clearColumn}
+        moveAllTasks={moveAllTasks}
+        addTask={addTask}
+      />
     </div>
   );
 };
