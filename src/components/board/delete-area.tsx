@@ -93,7 +93,7 @@ export const DeleteArea = ({
                 <span>theme</span>
               </button>
               <a
-                href="https://x.com/sudipcodes"
+                href="https://x.com/sudipunscripted"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs text-muted-foreground"
