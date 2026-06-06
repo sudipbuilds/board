@@ -102,7 +102,7 @@ export const DeleteArea = ({
                 <span>twitter</span>
               </a>
               <a
-                href="https://github.com/sudipb7/board"
+                href="https://github.com/sudipbuilds/board"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs text-muted-foreground"

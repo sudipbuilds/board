@@ -25,12 +25,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp }) => {
               </p>
               <p className="text-lg sm:text-xl font-semibold">Sudip Biswas</p>
               <a
-                href="https://x.com/sudipcodes"
+                href="https://x.com/sudipunscripted"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-primary"
               >
-                @sudipcodes
+                @sudipunscripted
               </a>
             </div>
           </div>
